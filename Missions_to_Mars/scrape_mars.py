@@ -21,6 +21,7 @@ def scrape():
     news_title = soup.find_all('div', class_='content_title')[0].text
     news_p = soup.find_all('div', class_='article_teaser_body')[0].text
     news_date = soup.find_all('div', class_="list_date")[0].text
+   
     #print(news_title)
     #print(paragraph)
 
