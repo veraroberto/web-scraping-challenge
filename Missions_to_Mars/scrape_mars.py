@@ -5,6 +5,8 @@ import pymongo
 from splinter import Browser
 from webdriver_manager.chrome import ChromeDriverManager
 
+import time
+
 
 def scrape():
    
@@ -14,6 +16,7 @@ def scrape():
     # Scrap NASA Mars News
     mars_url = 'https://redplanetscience.com/'
     browser.visit(mars_url)
+    time.sleep(3)
     soup = bs(browser.html, 'html.parser')
     news_title = soup.find_all('div', class_='content_title')[0].text
     news_p = soup.find_all('div', class_='article_teaser_body')[0].text
